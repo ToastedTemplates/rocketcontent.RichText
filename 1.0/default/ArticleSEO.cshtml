@@ -1,0 +1,35 @@
+﻿@inherits RocketContent.Components.RocketContentTokens<Simplisity.SimplisityRazor>
+@using DNNrocketAPI.Components;
+@using Simplisity;
+@using RocketContent.Components;
+
+@AddProcessData("resourcepath", "/DesktopModules/DNNrocket/api/App_LocalResources/")
+@AddProcessData("resourcepath", "/DesktopModules/DNNrocket/RocketMod/App_LocalResources/")
+@AddProcessData("resourcepath", "/DesktopModules/DNNrocketModules/RocketECommerce/App_LocalResources/")
+
+@{
+    var articleData = (ArticleLimpet)Model.List.First();
+    var info = articleData.Info;
+}
+
+<div class="w3-row w3-padding">
+    <div class="">
+        <label>@ResourceKey("RE.keywords")</label>
+        @TextArea(info, "genxml/textbox/productkeywords", "class='w3-border' rows='6'", "")
+    </div>
+
+</div>
+
+<script>
+    $(document).ready(function () {
+
+        $('#productkeywords').tagEditor({
+            delimiter: ', ', /* space and comma */
+            placeholder: '@ResourceKey("RE.keywords") ...',
+            removeDuplicates: false,
+        });
+
+
+    });
+
+</script>
