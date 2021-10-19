@@ -1,1 +1,1 @@
-# rocketcontent.HtmlContent
+# rocketcontent.RichText

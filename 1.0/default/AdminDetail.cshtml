@@ -1,0 +1,51 @@
+@inherits RocketContent.Components.RocketContentTokens<Simplisity.SimplisityRazor>
+@using DNNrocketAPI;
+@using Simplisity;
+@using RocketContent.Components;
+@using DNNrocketAPI.Components;
+
+@AddProcessData("resourcepath", "/DesktopModules/DNNrocket/api/App_LocalResources/")
+@AddProcessData("resourcepath", "/DesktopModules/DNNrocketModules/RocketContent/App_LocalResources/")
+
+@{
+    var info = new SimplisityInfo();
+    var articleData = (ArticleLimpet)Model.List.First();
+    if (articleData.Info != null)
+    {
+        info = articleData.Info;
+    }
+}
+
+<script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+
+<div class="w3-container w3-padding">
+    <div class="w3-button w3-teal simplisity_click" s-cmd="remote_editsave" s-post="#datasection" s-fields='{"moduleid":"@(Model.ModuleId)","moduleref":"@(Model.ModuleRef)"}'>@ButtonText(ButtonTypes.save)</div>
+</div>
+
+<div id="datasection" class="w3-padding">
+
+    <div class="w3-row">
+        @CKEditor4(info, "genxml/lang/genxml/textbox/richtext", true)
+    </div>
+
+</div>
+
+<div>
+    @if (UserUtils.IsInRole("Administrator"))
+    {
+        <div class="w3-container">
+            <div class="w3-right">
+                @RenderXml(info)
+            </div>
+        </div>
+    }
+</div>
+
+
+<script>
+    $(document).ready(function () {
+    });
+</script>
+
+
+
