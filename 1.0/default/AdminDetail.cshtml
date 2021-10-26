@@ -19,7 +19,7 @@
 <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
 
 <div class="w3-container w3-padding">
-    <div class="w3-button w3-teal simplisity_click" s-cmd="remote_editsave" s-post="#datasection" s-fields='{"moduleid":"@(Model.ModuleId)","moduleref":"@(Model.ModuleRef)"}'>@ButtonText(ButtonTypes.save)</div>
+    <div class="w3-button w3-teal simplisity_click" s-cmd="remote_editsave" s-post="#datasection" s-fields='{"moduleref":"@(articleData.ModuleRef)"}'>@ButtonText(ButtonTypes.save)</div>
 </div>
 
 <div id="datasection" class="w3-padding">
