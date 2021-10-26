@@ -5,28 +5,7 @@
 @using DNNrocketAPI.Components;
 
 @{
-    var portalCatalog = (PortalCatalogLimpet)Model.List.First();
+    var portalContentData = (PortalContentLimpet)Model.List.First();
     var sessionParams = (SessionParams)Model.SessionParamsData;
-    var paramInfo = (SimplisityInfo)Model.GetDataObject("paraminfo");
 }
-
-<script type="text/javascript" src="@(portalCatalog.EngineUrlWithProtocol)/DesktopModules/DNNrocket/Simplisity/js/simplisity.js"></script>
-<link rel="stylesheet" href="@(portalCatalog.EngineUrlWithProtocol)/DesktopModules/DNNrocket/css/w3.css">
-
-<script>
-
-    $(document).ready(function () {
-        $(document).simplisityStartUp('@(portalCatalog.EngineUrlWithProtocol)/Desktopmodules/dnnrocket/api/rocket/action', { systemkey: 'rocketcontent', debug: false });
-
-        @{
-            // THESE VALUES ARE NEEDED FOR REMOTE RENDERING, POPULATE THEM ON FIRST LOAD (In the module OnInit(EventArgs e)),
-            //  THEN ADD THEM TO SESSIONPARAMS SO THEY ARE AVAILABLE FOR REMOTE SERVER RENDERING.
-        }
-        simplisity_setSessionField("pageurl", '@sessionParams.PageUrl');
-        simplisity_setSessionField("sitekey", '@sessionParams.SiteKey');
-        simplisity_setSessionField('culturecode', '@sessionParams.CultureCode');
-
-    });
-
-</script>
 

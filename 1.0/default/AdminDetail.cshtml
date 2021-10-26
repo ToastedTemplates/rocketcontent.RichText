@@ -14,6 +14,8 @@
     {
         info = articleData.Info;
     }
+    var appThemeSystem = new AppThemeSystemLimpet("rocketcontent");
+    var sessionParams = Model.SessionParamsData;
 }
 
 <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
@@ -25,6 +27,7 @@
 <div id="datasection" class="w3-padding">
 
     <div class="w3-row">
+        &nbsp;@EditFlag(sessionParams)
         @CKEditor4(info, "genxml/lang/genxml/textbox/richtext", true)
     </div>
 
