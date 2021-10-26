@@ -16,21 +16,14 @@
     }
     var appThemeSystem = new AppThemeSystemLimpet("rocketcontent");
     var sessionParams = Model.SessionParamsData;
+    var remoteModule = (RemoteModule)Model.GetDataObject("remotemodule");
 }
 
 <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
 
-<div class="w3-container w3-padding">
-    <div class="w3-button w3-teal simplisity_click" s-cmd="remote_editsave" s-post="#datasection" s-fields='{"moduleref":"@(articleData.ModuleRef)"}'>@ButtonText(ButtonTypes.save)</div>
-</div>
-
-<div id="datasection" class="w3-padding">
-
-    <div class="w3-row">
-        &nbsp;@EditFlag(sessionParams)
-        @CKEditor4(info, "genxml/lang/genxml/textbox/richtext", true)
-    </div>
-
+<div class="w3-row">
+    &nbsp;@EditFlag(sessionParams)
+    @CKEditor4(info, "genxml/lang/genxml/textbox/richtext", true)
 </div>
 
 <script>
