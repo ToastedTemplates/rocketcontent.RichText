@@ -1,11 +1,10 @@
 ﻿@inherits RocketContent.Components.RocketContentTokens<Simplisity.SimplisityRazor>
-@using DNNrocketAPI;
-@using Simplisity;
-@using RocketContent.Components;
 @using DNNrocketAPI.Components;
+@using RocketPortal.Components;
 
 @{
-    var portalContentData = (PortalContentLimpet)Model.List.First();
-    var sessionParams = (SessionParams)Model.SessionParamsData;
+    var portalData = new PortalLimpet(PortalUtils.GetCurrentPortalId());
 }
+
+<link rel="stylesheet" href="@(portalData.EngineUrlWithProtocol)/DesktopModules/RocketThemes/rocketcontent.RichText/1.0/css/theme.css">
 
