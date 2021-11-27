@@ -7,9 +7,12 @@
 @AddProcessData("resourcepath", "/DesktopModules/DNNrocket/api/App_LocalResources/")
 @AddProcessData("resourcepath", "/DesktopModules/DNNrocketModules/RocketContent/App_LocalResources/")
 
-@{
+@{ 
     var articleData = (ArticleLimpet)Model.List.First();
     var sessionParams = (SessionParams)Model.SessionParamsData;
+    var articleDataRow = articleData.GetRow(0);
 }
 
-@HtmlOf(articleData.Info.GetXmlProperty("genxml/lang/genxml/textbox/richtext"))
+<!------------------------------------------------------------------------------------------------------------------------------>
+
+@HtmlOf(articleDataRow.Info.GetXmlProperty("genxml/lang/genxml/textbox/richtext"))
