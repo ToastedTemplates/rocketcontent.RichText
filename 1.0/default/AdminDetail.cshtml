@@ -18,13 +18,12 @@
     }
     var appThemeSystem = new AppThemeSystemLimpet("rocketcontent");
     var sessionParams = Model.SessionParamsData;
-    var remoteModule = (RemoteModule)Model.GetDataObject("remotemodule");
     var portalData = new PortalLimpet(PortalUtils.GetCurrentPortalId());
-    var appTheme = new AppThemeLimpet(remoteModule.AppThemeFolder, remoteModule.AppThemeVersion);
+    var appTheme = new AppThemeLimpet(articleData.AdminAppThemeFolder, articleData.AdminAppThemeFolderVersion);
 
 }
 
-@AddProcessData("resourcepath", "/DesktopModules/RocketThemes/" + remoteModule.AppThemeFolder + "/resx")
+@AddProcessData("resourcepath", "/DesktopModules/RocketThemes/" + articleData.AdminAppThemeFolder + "/resx")
 
 <!-- require Key for saving -->
 @HiddenField(info, "genxml/config/rowkey")
