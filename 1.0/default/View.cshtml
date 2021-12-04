@@ -4,6 +4,8 @@
 @using RocketContent.Components;
 @using DNNrocketAPI.Components;
 
+@SecuritySiteKey(Model.SessionParamsData)
+
 @AddProcessData("resourcepath", "/DesktopModules/DNNrocket/api/App_LocalResources/")
 @AddProcessData("resourcepath", "/DesktopModules/DNNrocketModules/RocketContent/App_LocalResources/")
 
